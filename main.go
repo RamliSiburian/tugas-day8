@@ -68,7 +68,6 @@ type Project struct {
 	Description string
 	StartDate   string
 	EndDate     string
-	
 }
 
 // mengambl data yang di push dari newproject dalam bentuk array
@@ -96,12 +95,14 @@ func addProject(w http.ResponseWriter, r *http.Request) {
 	title := r.PostForm.Get("projectName")
 	content := r.PostForm.Get("description")
 	startDate := r.PostForm.Get("startDate")
+	endDate := r.PostForm.Get("endDate")
 
 	// menyimpan data dari form ke object
 	newProject := Project{
 		ProjectName: title,
 		Description: content,
 		StartDate:   startDate,
+		EndDate:     endDate,
 	}
 
 	// push data dari onject ke dataproject
@@ -132,6 +133,8 @@ func detailProject(w http.ResponseWriter, r *http.Request) {
 			projectDetail = Project{
 				ProjectName: data.ProjectName,
 				Description: data.Description,
+				StartDate:   data.StartDate,
+				EndDate:     data.EndDate,
 			}
 		}
 	}
@@ -182,6 +185,8 @@ func formEditProject(w http.ResponseWriter, r *http.Request) {
 			projectEdit = Project{
 				ProjectName: data.ProjectName,
 				Description: data.Description,
+				StartDate:   data.StartDate,
+				EndDate:     data.EndDate,
 			}
 		}
 	}
@@ -203,12 +208,14 @@ func editProject(w http.ResponseWriter, r *http.Request) {
 	title := r.PostForm.Get("projectName")
 	content := r.PostForm.Get("description")
 	startDate := r.PostForm.Get("startDate")
+	endDate := r.PostForm.Get("endDate")
 
 	// menyimpan data dari form ke object
 	newProject := Project{
 		ProjectName: title,
 		Description: content,
 		StartDate:   startDate,
+		EndDate:     endDate,
 	}
 
 	// push data dari onject ke dataproject

@@ -59,11 +59,13 @@
                 <div class="form-group mt-3 d-lg-flex gap-4 ">
                     <div class="start-date w-100">
                         <label for="startDate" class="form-label fw-bold"> Start Date </label>
-                        <input type="date" name="startDate" id="startDate" class="form-control" placeholder="">
+                        <input type="date" name="startDate" id="startDate" class="form-control"
+                            value="{{ .Project.StartDate }}">
                     </div>
                     <div class="end-date w-100">
                         <label for="endDate" class="form-label fw-bold"> End Date </label>
-                        <input type="date" name="endDate" id="endDate" class="form-control" placeholder="">
+                        <input type="date" name="endDate" id="endDate" class="form-control"
+                            value="{{ .Project.EndDate }}">
                     </div>
                 </div>
                 <div class="form-group mt-3">
